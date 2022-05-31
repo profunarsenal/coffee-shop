@@ -71,11 +71,11 @@
             <div class="shop__wrapper">
               <card-component
                 classItem="shop__item"
-                :name="coff.name"
-                :image="coff.image"
-                :price="coff.price"
-                v-for="coff of coffee"
-                :key="coff.id"
+                :name="coffee.name"
+                :image="coffee.image"
+                :price="coffee.price"
+                v-for="coffee of coffees"
+                :key="coffee.id"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ export default {
 
   data() {
     return {
-      coffee: [
+      coffees: [
         {
           id: 0,
           image: "coffee-1.jpg",
