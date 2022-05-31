@@ -63,21 +63,11 @@
             <div class="best__wrapper">
               <card-component
                 classItem="best__item"
-                :name="bestsellers[0].name"
-                :image="bestsellers[0].image"
-                :price="bestsellers[0].price"
-              />
-              <card-component
-                classItem="best__item"
-                :name="bestsellers[1].name"
-                :image="bestsellers[1].image"
-                :price="bestsellers[1].price"
-              />
-              <card-component
-                classItem="best__item"
-                :name="bestsellers[2].name"
-                :image="bestsellers[2].image"
-                :price="bestsellers[2].price"
+                :name="best.name"
+                :image="best.image"
+                :price="best.price"
+                v-for="best of bestsellers"
+                :key="best.id"
               />
             </div>
           </div>

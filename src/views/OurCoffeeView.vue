@@ -71,39 +71,11 @@
             <div class="shop__wrapper">
               <card-component
                 classItem="shop__item"
-                :name="coffee[0].name"
-                :image="coffee[0].image"
-                :price="coffee[0].price"
-              />
-              <card-component
-                classItem="shop__item"
-                :name="coffee[1].name"
-                :image="coffee[1].image"
-                :price="coffee[1].price"
-              />
-              <card-component
-                classItem="shop__item"
-                :name="coffee[2].name"
-                :image="coffee[2].image"
-                :price="coffee[2].price"
-              />
-              <card-component
-                classItem="shop__item"
-                :name="coffee[3].name"
-                :image="coffee[3].image"
-                :price="coffee[3].price"
-              />
-              <card-component
-                classItem="shop__item"
-                :name="coffee[4].name"
-                :image="coffee[4].image"
-                :price="coffee[4].price"
-              />
-              <card-component
-                classItem="shop__item"
-                :name="coffee[5].name"
-                :image="coffee[5].image"
-                :price="coffee[5].price"
+                :name="coff.name"
+                :image="coff.image"
+                :price="coff.price"
+                v-for="coff of coffee"
+                :key="coff.id"
               />
             </div>
           </div>

@@ -50,39 +50,11 @@
             <div class="shop__wrapper">
               <card-component
                 classItem="shop__item"
-                :name="goods[0].name"
-                :image="goods[0].image"
-                :price="goods[0].price"
-              />
-              <card-component
-                classItem="shop__item"
-                :name="goods[1].name"
-                :image="goods[1].image"
-                :price="goods[1].price"
-              />
-              <card-component
-                classItem="shop__item"
-                :name="goods[2].name"
-                :image="goods[2].image"
-                :price="goods[2].price"
-              />
-              <card-component
-                classItem="shop__item"
-                :name="goods[3].name"
-                :image="goods[3].image"
-                :price="goods[3].price"
-              />
-              <card-component
-                classItem="shop__item"
-                :name="goods[4].name"
-                :image="goods[4].image"
-                :price="goods[4].price"
-              />
-              <card-component
-                classItem="shop__item"
-                :name="goods[5].name"
-                :image="goods[5].image"
-                :price="goods[5].price"
+                :name="good.name"
+                :image="good.image"
+                :price="good.price"
+                v-for="good of goods"
+                :key="good.id"
               />
             </div>
           </div>
