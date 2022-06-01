@@ -4,23 +4,19 @@
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <ul class="footer d-flex flex-wrap">
-            <li class="footer__item">
-              <router-link :to="links[0].link">
-                <img
-                  :src="require(`@/assets/logo/${links[0].icon}`)"
-                  :alt="links[0].icon"
-                />
-              </router-link>
-            </li>
-            <li class="footer__item">
-              <router-link :to="links[1].link">{{ links[1].text }}</router-link>
-            </li>
-            <li class="footer__item">
-              <router-link :to="links[2].link">{{ links[2].text }}</router-link>
-            </li>
-            <li class="footer__item">
-              <router-link :to="links[3].link">{{ links[3].text }}</router-link>
-            </li>
+            <nav-item classLink="footer__item" :link="links.header.link">
+              <img
+                :src="require(`@/assets/logo/${links.header.icon}`)"
+                :alt="links.header.icon"
+              />
+            </nav-item>
+            <nav-item
+              classLink="footer__item"
+              v-for="link of links.other"
+              :key="link.id"
+              :link="link.link"
+              :text="link.text"
+            />
           </ul>
         </div>
       </div>
@@ -34,31 +30,37 @@
 </template>
 
 <script>
+import NavItem from "@/components/NavItem.vue";
+
 export default {
+  components: { NavItem },
+
   data() {
     return {
-      links: [
-        {
+      links: {
+        header: {
           id: 0,
           link: "/",
           icon: "Logo_black.svg",
         },
-        {
-          id: 1,
-          link: "/our-coffee",
-          text: "Our coffee",
-        },
-        {
-          id: 2,
-          link: "/goods",
-          text: "For your pleasure",
-        },
-        {
-          id: 3,
-          link: "/contacts",
-          text: "Contact us",
-        },
-      ],
+        other: [
+          {
+            id: 1,
+            link: "/our-coffee",
+            text: "Our coffee",
+          },
+          {
+            id: 2,
+            link: "/goods",
+            text: "For your pleasure",
+          },
+          {
+            id: 3,
+            link: "/contacts",
+            text: "Contact us",
+          },
+        ],
+      },
     };
   },
 };
