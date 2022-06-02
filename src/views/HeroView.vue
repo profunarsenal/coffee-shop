@@ -19,8 +19,8 @@
               We makes every day full of energy and taste
             </div>
             <div class="preview__subtitle">Want to try our beans?</div>
-            <router-link to="/our-coffee" class="preview__btn">
-              More</router-link
+            <a @click.prevent="scrollToBest" href="#" class="preview__btn">
+              More</a
             >
           </div>
         </div>
@@ -55,7 +55,7 @@
         </div>
       </div>
     </section>
-    <section class="best">
+    <section ref="sectionBest" class="best">
       <div class="container">
         <div class="title">Our best</div>
         <div class="row">
@@ -110,6 +110,15 @@ export default {
         },
       ],
     };
+  },
+
+  methods: {
+    scrollToBest() {
+      this.$refs.sectionBest.scrollIntoView({
+        block: "start",
+        behavior: "smooth",
+      });
+    },
   },
 };
 </script>
