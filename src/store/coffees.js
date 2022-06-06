@@ -1,6 +1,6 @@
 const coffees = {
   state: {
-    coffees: [
+    cards: [
       {
         id: 0,
         image: "coffee-1.jpg",
@@ -42,7 +42,13 @@ const coffees = {
 
   getters: {
     getCoffees(state) {
-      return state.coffees
+      return state.cards
+    },
+
+    getCoffeeById(state) {
+      return (id) => {
+        return state.cards.find((card) => card.id === +id)
+      }
     }
   }
 }

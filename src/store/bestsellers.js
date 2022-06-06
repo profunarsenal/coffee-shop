@@ -1,6 +1,6 @@
 const bestsellers = {
   state: {
-    bestsellers: [
+    cards: [
       {
         id: 0,
         image: "coffee-1.jpg",
@@ -24,7 +24,7 @@ const bestsellers = {
 
   getters: {
     getBestsellers(state) {
-      return state.bestsellers
+      return state.cards
     }
   }
 }

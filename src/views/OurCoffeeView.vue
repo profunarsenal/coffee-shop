@@ -71,11 +71,10 @@
             <div class="shop__wrapper">
               <card-component
                 classItem="shop__item"
-                :name="coffee.name"
-                :image="coffee.image"
-                :price="coffee.price"
-                v-for="coffee of coffees"
-                :key="coffee.id"
+                :card="card"
+                v-for="card of cards"
+                :key="card.id"
+                @onNavigate="navigate"
               />
             </div>
           </div>
@@ -96,8 +95,14 @@ export default {
   },
 
   computed: {
-    coffees() {
+    cards() {
       return this.$store.getters["getCoffees"];
+    },
+  },
+
+  methods: {
+    navigate(id) {
+      this.$router.push({ name: "coffee", params: { id: id } });
     },
   },
 };

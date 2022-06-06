@@ -63,11 +63,9 @@
             <div class="best__wrapper">
               <card-component
                 classItem="best__item"
-                :name="best.name"
-                :image="best.image"
-                :price="best.price"
-                v-for="best of bestsellers"
-                :key="best.id"
+                :card="card"
+                v-for="card of cards"
+                :key="card.id"
               />
             </div>
           </div>
@@ -88,7 +86,7 @@ export default {
   },
 
   computed: {
-    bestsellers() {
+    cards() {
       return this.$store.getters["getBestsellers"];
     },
   },

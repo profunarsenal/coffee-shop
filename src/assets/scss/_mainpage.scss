@@ -5,7 +5,12 @@
 
     .title-big {
         margin-top: 110px;
+
+        @media(max-width: 576.98px) {
+            margin-top: 50px;
+        }
     }
+
     &__subtitle {
         color: #ffffff;
         font-weight: bold;
@@ -15,11 +20,13 @@
         text-align: center;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
+
     &__subtitle {
         font-size: 24px;
         margin-top: 20px;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
+
     &__btn {
         display: block;
         width: 120px;
@@ -39,6 +46,7 @@
             text-decoration: none;
             color: #fff;
         }
+
         &:hover {
             text-decoration: none;
             color: #fff;
@@ -55,12 +63,14 @@
 .about {
     padding: 80px 0 110px 0;
     background-color: #fff;
+
     &__text {
         margin-top: 40px;
         text-align: center;
         font-size: 14px;
     }
 }
+
 .best {
     padding: 80px 0 110px 0;
     background-color: #fff;
@@ -68,9 +78,10 @@
     background-size: cover;
 
     &__wrapper {
-        display: flex; 
+        display: flex;
         flex-wrap: wrap;
     }
+
     &__item {
         width: 220px;
         min-height: 240px;
@@ -79,6 +90,7 @@
         padding: 22px 24px;
         background: rgba(255, 255, 255, 0.65);
         border-radius: 8px;
+
         img {
             display: block;
             margin: 0 auto;
@@ -86,7 +98,9 @@
             height: 130px;
             object-fit: cover;
         }
-        &-title, &-price {
+
+        &-title,
+        &-price {
             font-size: 14px;
             margin-top: 10px;
             text-align: right;

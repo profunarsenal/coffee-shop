@@ -1,10 +1,10 @@
 const goods = {
   state: {
-    goods: [
+    cards: [
       {
         id: 0,
         image: "coffee-1.jpg",
-        name: "Solimo Coffee Beans 2kg",
+        name: "Solimo Coffee Beans 3kg",
         price: 10.73,
       },
       {
@@ -42,7 +42,13 @@ const goods = {
 
   getters: {
     getGoods(state) {
-      return state.goods
+      return state.cards
+    },
+
+    getGoodsById(state) {
+      return (id) => {
+        return state.cards.find(card => card.id === +id)
+      }
     }
   }
 }
