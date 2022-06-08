@@ -1,4 +1,4 @@
-# coffee-shop
+# coffee-shop (учебный проект)
 
 ## Project setup
 ```
